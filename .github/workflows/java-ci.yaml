@@ -1,0 +1,30 @@
+name: Java Cl Pipeline 
+
+on:
+  push:
+     branches: 
+       -main 
+
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+
+steps:
+    -name:Checkout Repository
+    uses:actions/checkout@v4
+
+    -name:Set Up JDK
+    uses:actions/setup-java@v4
+    with:
+       distribution:'temurin'
+       java-version:'17'
+
+    -name:Compile Java Files
+    run:javac*.java
+
+    -name:Run Java Program
+    run:java Main   
+
+    -name:Run Test
+    run:java CalculatorTest
+
