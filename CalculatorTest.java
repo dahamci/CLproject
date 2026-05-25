@@ -5,7 +5,7 @@ public class CalculatorTest{
             System.out.println("test passed");
         }
         else{
-            System.out.println("test failed")
+            System.out.println("test failed");
         }
     }
 }

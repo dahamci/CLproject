@@ -13,17 +13,26 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Set Up JDK
+      - name: Setup Java
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Compile Java Files
-        run: javac *.java
+      - name: Run Custom Action
+        uses: ./.github/actions/java-build      
 
-      - name: Run Java Program
-        run: java Main
+     # - name: Set Up JDK
+      #  uses: actions/setup-java@v4
+       # with:
+          #distribution: 'temurin'
+          #java-version: '17'
 
-      - name: Run Test
-        run: java CalculatorTest
+      #- name: Compile Java Files
+       # run: javac *.java
+
+      #- name: Run Java Program
+       # run: java Main
+
+      #- name: Run Test
+       # run: java CalculatorTest
